@@ -19,6 +19,7 @@ public class SQLiteHelper extends SQLiteOpenHelper {
     public void onCreate(SQLiteDatabase db) {
         //creamos la tabla si no existe
         db.execSQL(EstructuraBBDD.SQL_CREATE_ENTRIES);
+        db.execSQL(EstructuraBBDD.SQL_CREATE_PARTIDA);
 
     }
 
@@ -35,6 +36,10 @@ public class SQLiteHelper extends SQLiteOpenHelper {
         db.execSQL(EstructuraBBDD.SQL_DELETE_ENTRIES);
         //Se crea la nueva versión de la tabla
         db.execSQL(EstructuraBBDD.SQL_CREATE_ENTRIES);
+        //Se elimina la versión anterior de la tabla
+        db.execSQL(EstructuraBBDD.SQL_CREATE_PARTIDA);
+        //Se crea la nueva versión de la tabla
+        db.execSQL(EstructuraBBDD.SQL_CREATE_PARTIDA);
 
     }
 }
